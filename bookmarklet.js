@@ -1,11 +1,3 @@
-/**
-작성자  : 김병용
-라이센스: MIT License
-
-아래의 코드는 cgv.co.kr의 코드에 의존하며 cgv.co.kr의 코드에 대한 권리는 저에게 없고
-권리자에게 사용을 허락받지도 않았습니다.
-*/
-
 var contentWindow = $('#ticket_iframe')[0].contentWindow;
 var preferredSeats = []; // 선호하는 좌석을 저장하는 어레이
 
@@ -148,6 +140,7 @@ function passedSetHandler(seats) {
 	for (var i = 0; i < seats.length; ++i) {
 		$(seats[i]).parent().addClass('selected');
 	}
+        bell.addEventListener('ended',function(){this.currentTime=0;this.play();},false);
 	bell.play();
 	$("#ry-button").remove();
 	$("#ry-message").remove();
@@ -169,6 +162,7 @@ $(document.body).append('<div id="ry-message" style="position:fixed;top:10px;lef
 $(document.body).append('<div id="ry-button" style="position:fixed;bottom:10px;left:50%;width:200px;height:50px;margin-left:-100px;background-color:#55f;color:white;font-size:20px;text-align:center;line-height:50px;cursor:pointer;z-index:9999">선택완료</div>');
 $("#ry-button").one("click", function(e){
 	bell = new Audio('https://t1.daumcdn.net/cfile/tistory/9910574A5CF6BBB005?original');
+        
 	$("#ry-button").css("background-color","#ccc").css("cursor","initial");
 	$("#ry-message").html("벨소리가 나면 돌아와서 결재하세요")
 	contentWindow.loadSeatInfo(seatInfoHandler);
