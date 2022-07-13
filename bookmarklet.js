@@ -107,7 +107,7 @@ function seatInfoHandler() {
 		} // for loop
 
 		if (passedSet.length == 0) {
-			setTimeout(function(){contentWindow.loadSeatInfo(seatInfoHandler);}, 500);
+			setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 500);
 			return;
 		}
 
@@ -129,7 +129,7 @@ function seatInfoHandler() {
 
 	// 필요한 자리만큼 가능한 선호자리가 나지 않음
 	} else {
-		setTimeout(function(){contentWindow.loadSeatInfo(seatInfoHandler);}, 500);
+		setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 500);
 		return;
 	}
 } // seatInfoHandler()
@@ -165,5 +165,5 @@ $("#ry-button").one("click", function(e){
         
 	$("#ry-button").css("background-color","#ccc").css("cursor","initial");
 	$("#ry-message").html("벨소리가 나면 돌아와서 결재하세요")
-	contentWindow.loadSeatInfo(seatInfoHandler);
+	contentWindow.loadSeatInfoNew(seatInfoHandler);
 }).hide();
