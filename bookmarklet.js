@@ -107,7 +107,7 @@ function seatInfoHandler() {
 		} // for loop
 
 		if (passedSet.length == 0) {
-			setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 500);
+			setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 300);
 			return;
 		}
 
@@ -129,7 +129,7 @@ function seatInfoHandler() {
 
 	// 필요한 자리만큼 가능한 선호자리가 나지 않음
 	} else {
-		setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 500);
+		setTimeout(function(){contentWindow.loadSeatInfoNew(seatInfoHandler);}, 300);
 		return;
 	}
 } // seatInfoHandler()
